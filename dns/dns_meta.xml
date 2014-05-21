@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ccm:Editor xmlns:ccm="http://cloudconductor.org/namespaces/ccm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ccm:Nodes>
+    <ccm:Node id="cloud1" xsi:type="ccm:Infrastructure">
+      <ccm:x>118.5</ccm:x>
+      <ccm:y>51.5</ccm:y>
+      <ccm:z>0</ccm:z>
+      <ccm:width>350</ccm:width>
+      <ccm:height>250</ccm:height>
+    </ccm:Node>
+    <ccm:Node id="private_net1" xsi:type="ccm:Network">
+      <ccm:x>179.5</ccm:x>
+      <ccm:y>118.5</ccm:y>
+      <ccm:z>1</ccm:z>
+      <ccm:children>1</ccm:children>
+    </ccm:Node>
+    <ccm:Node id="small-server-zabbix" xsi:type="ccm:Machine">
+      <ccm:x>204.5</ccm:x>
+      <ccm:y>163.5</ccm:y>
+      <ccm:z>2</ccm:z>
+    </ccm:Node>
+  </ccm:Nodes>
+  <ccm:Links>
+    <ccm:Link>
+      <ccm:Source ref="private_net1">
+        <ccm:Selector>g:nth-child(1) g:nth-child(3) circle:nth-child(1)    </ccm:Selector>
+      </ccm:Source>
+      <ccm:Target ref="small-server-zabbix">
+        <ccm:Selector>g:nth-child(1) g:nth-child(2)   </ccm:Selector>
+      </ccm:Target>
+    </ccm:Link>
+  </ccm:Links>
+</ccm:Editor>
